@@ -1,0 +1,403 @@
+/* Variabili principali per un tema coerente in tutto il sito */
+:root {
+  --pulse-primary: #00f3ff;      /* Colore primario blu neon */
+  --pulse-primary-light: #80f9ff; /* Blu neon più chiaro per i gradienti */
+  --pulse-secondary: #9d00ff;    /* Viola neon per gli accenti */
+  --pulse-dark: #0a0a0f;         /* Nero profondo */
+  --pulse-darker: #050507;       /* Sfondo più scuro per le card */
+  --pulse-light: #e0e0ff;        /* Colore chiaro per il testo */
+  --section-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1); /* Transizione per le sezioni */
+}
+
+/* Reset di margini, padding e box-sizing per tutti gli elementi */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Scorrimento fluido per la pagina */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Stile del corpo della pagina */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  color: var(--pulse-light); /* Colore del testo */
+  background-color: var(--pulse-dark); /* Colore di sfondo */
+  overflow: hidden; /* Nasconde il contenuto che esce dai bordi */
+  position: relative; /* Posizionamento relativo per elementi figli */
+}
+
+/* Sfondo che segue il cursore */
+.cursor-bg {
+  position: fixed; /* Posizionamento fisso */
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle,
+    rgba(28, 112, 223, 0.3) 0%,
+    rgba(96, 45, 236, 0.2) 40%,
+    rgba(157, 0, 255, 0.1) 60%,
+    transparent 80%
+  ); /* Gradiente radiale */
+  border-radius: 50%; /* Bordi arrotondati */
+  pointer-events: none; /* Ignora gli eventi del mouse */
+  transform: translate(-50%, -50%); /* Centrato rispetto al cursore */
+  z-index: 0; /* Livello di profondità */
+  mix-blend-mode: screen; /* Modalità di fusione */
+  filter: blur(10px); /* Sfocatura */
+  animation: pulse 2s infinite; /* Animazione di pulsazione */
+}
+
+/* Animazione di pulsazione */
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Contenitore delle particelle */
+#particles {
+  position: fixed; /* Posizionamento fisso */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Livello di profondità */
+  pointer-events: none; /* Ignora gli eventi del mouse */
+}
+
+/* Contenitore dello scorrimento */
+.scroll-container {
+  height: 100vh; /* Altezza pari al 100% della viewport */
+  overflow: hidden; /* Nasconde il contenuto che esce dai bordi */
+  position: relative; /* Posizionamento relativo per elementi figli */
+  z-index: 2; /* Livello di profondità */
+}
+
+/* Sezione di scorrimento */
+.scroll-section {
+  min-height: 100vh; /* Altezza minima pari al 100% della viewport */
+  width: 100%;
+  position: absolute; /* Posizionamento assoluto */
+  top: 0;
+  left: 0;
+  padding: 80px 0;
+  opacity: 0; /* Inizialmente invisibile */
+  visibility: hidden; /* Inizialmente nascosto */
+  transform: translateY(100%); /* Inizialmente spostato verso il basso */
+  transition: var(--section-transition); /* Transizione per l'animazione */
+  display: flex; /* Display flessibile */
+  align-items: center; /* Allineamento centrale */
+}
+
+/* Sezione di scorrimento attiva */
+.scroll-section.active {
+  opacity: 1; /* Visibile */
+  visibility: visible; /* Visibile */
+  transform: translateY(0); /* Posizionato normalmente */
+}
+
+/* Stile della barra di navigazione */
+.navbar {
+  background: rgba(86, 42, 189, 0.227); /* Sfondo semi-trasparente */
+  backdrop-filter: blur(10px); /* Sfocatura dello sfondo */
+  -webkit-backdrop-filter: blur(10px); /* Sfocatura dello sfondo per WebKit */
+  box-shadow: 0 4px 30px rgba(0, 243, 255, 0.15); /* Ombra */
+  border: 1px solid rgba(0, 243, 255, 0.1); /* Bordo */
+  border-radius: 0 0 1rem 1rem; /* Bordi arrotondati */
+  margin: 0 1rem; /* Margine */
+  width: calc(100% - 2rem); /* Larghezza calcolata */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transizione per trasformazione e ombra */
+  z-index: 1000; /* Livello di profondità */
+}
+
+/* Effetto hover sulla barra di navigazione */
+.navbar:hover {
+  transform: translateY(2px); /* Spostamento verso il basso */
+  box-shadow: 0 6px 40px rgba(0, 243, 255, 0.2); /* Ombra più pronunciata */
+}
+
+/* Stile del logo nella barra di navigazione */
+.navbar-brand {
+  font-weight: 700; /* Peso del font */
+  font-size: 1.5rem; /* Dimensione del font */
+  color: var(--pulse-primary); /* Colore del testo */
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); /* Ombra del testo */
+}
+
+/* Stile dei link nella barra di navigazione */
+.nav-link {
+  color: var(--pulse-primary-light); /* Colore del testo */
+  font-weight: 500; /* Peso del font */
+  transition: all 0.3s; /* Transizione per tutti gli stili */
+  margin: 0 0.5rem; /* Margine */
+  text-shadow: 0 0 5px rgba(224, 224, 255, 0.3); /* Ombra del testo */
+  position: relative; /* Posizionamento relativo */
+  padding: 0.5rem 1rem; /* Padding */
+  border-radius: 0.5rem; /* Bordi arrotondati */
+}
+
+/* Effetto hover e stato attivo per i link nella barra di navigazione */
+.nav-link:hover,
+.nav-link.active {
+  color: var(--pulse-primary); /* Colore del testo */
+  background: rgba(0, 243, 255, 0.1); /* Sfondo semi-trasparente */
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); /* Ombra del testo */
+}
+
+/* Stile del testo con gradiente */
+.text-gradient {
+  background: linear-gradient(45deg, var(--pulse-primary), var(--pulse-secondary)); /* Gradiente lineare */
+  -webkit-background-clip: text; /* Clip dello sfondo per WebKit */
+  background-clip: text; /* Clip dello sfondo */
+  color: transparent; /* Colore trasparente */
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.3); /* Ombra del testo */
+}
+
+/* Stile del titolo principale */
+.hero-title {
+  font-size: 4rem; /* Dimensione del font */
+  font-weight: 800; /* Peso del font */
+  margin-bottom: 1rem; /* Margine inferiore */
+  letter-spacing: -0.02em; /* Spaziatura delle lettere */
+}
+
+/* Stile del sottotitolo principale */
+.hero-subtitle {
+  font-size: 1.5rem; /* Dimensione del font */
+  font-weight: 300; /* Peso del font */
+  margin-bottom: 2rem; /* Margine inferiore */
+  opacity: 0.8; /* Opacità */
+  color: var(--pulse-primary-light); /* Colore del testo */
+}
+
+/* Stile delle card delle caratteristiche e delle specifiche */
+.feature-card,
+.specs-card {
+  background: var(--pulse-darker); /* Sfondo */
+  border-radius: 1rem; /* Bordi arrotondati */
+  padding: 1.5rem; /* Padding */
+  height: 100%; /* Altezza completa */
+  transition: all 0.3s; /* Transizione per tutti gli stili */
+  border: 1px solid rgba(0, 243, 255, 0.1); /* Bordo */
+  box-shadow: 0 4px 20px rgba(0, 243, 255, 0.05); /* Ombra */
+}
+
+/* Effetto hover per le card delle caratteristiche */
+.feature-card:hover {
+  transform: translateY(-10px); /* Spostamento verso l'alto */
+  border-color: var(--pulse-primary); /* Colore del bordo */
+  box-shadow: 0 8px 30px rgba(0, 243, 255, 0.15); /* Ombra più pronunciata */
+}
+
+/* Effetto hover per le card delle specifiche */
+.specs-card:hover {
+  transform: translateX(5px); /* Spostamento verso destra */
+  border-color: var(--pulse-primary); /* Colore del bordo */
+  box-shadow: 0 4px 20px rgba(0, 243, 255, 0.15); /* Ombra più pronunciata */
+}
+
+/* Stile delle icone nelle card */
+.feature-icon,
+.specs-icon {
+  font-size: 2rem; /* Dimensione del font */
+  margin-bottom: 1rem; /* Margine inferiore */
+  color: var(--pulse-primary); /* Colore del testo */
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); /* Ombra del testo */
+}
+
+/* Stile del contenuto della sezione "About" */
+.about-content {
+  background: var(--pulse-darker); /* Sfondo */
+  border-radius: 1rem; /* Bordi arrotondati */
+  padding: 2rem; /* Padding */
+  border: 1px solid rgba(0, 243, 255, 0.1); /* Bordo */
+  box-shadow: 0 4px 20px rgba(0, 243, 255, 0.05); /* Ombra */
+  position: relative; /* Posizionamento relativo */
+  overflow: hidden; /* Nasconde il contenuto che esce dai bordi */
+}
+
+/* Effetto di lucentezza per il contenuto della sezione "About" */
+.about-content::before {
+  content: ''; /* Contenuto vuoto */
+  position: absolute; /* Posizionamento assoluto */
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(0, 243, 255, 0.1) 50%,
+    transparent 100%
+  ); /* Gradiente lineare */
+  animation: shine 3s infinite; /* Animazione di lucentezza */
+  pointer-events: none; /* Ignora gli eventi del mouse */
+}
+
+/* Animazione di lucentezza */
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Stile delle card nella sezione "About" */
+.about-card {
+  background: rgba(5, 5, 7, 0.9); /* Sfondo semi-trasparente */
+  border-radius: 1rem; /* Bordi arrotondati */
+  padding: 2rem; /* Padding */
+  height: 100%; /* Altezza completa */
+  transition: all 0.3s; /* Transizione per tutti gli stili */
+  border: 1px solid rgba(0, 243, 255, 0.1); /* Bordo */
+  backdrop-filter: blur(10px); /* Sfocatura dello sfondo */
+  -webkit-backdrop-filter: blur(10px); /* Sfocatura dello sfondo per WebKit */
+}
+
+/* Effetto hover per le card nella sezione "About" */
+.about-card:hover {
+  transform: translateY(-5px); /* Spostamento verso l'alto */
+  border-color: var(--pulse-primary); /* Colore del bordo */
+  box-shadow: 0 8px 30px rgba(0, 243, 255, 0.15); /* Ombra più pronunciata */
+}
+
+/* Stile delle icone nelle card della sezione "About" */
+.about-icon {
+  font-size: 3rem; /* Dimensione del font */
+  margin-bottom: 1rem; /* Margine inferiore */
+  background: linear-gradient(45deg, var(--pulse-primary), var(--pulse-secondary)); /* Gradiente lineare */
+  -webkit-background-clip: text; /* Clip dello sfondo per WebKit */
+  background-clip: text; /* Clip dello sfondo */
+  color: transparent; /* Colore trasparente */
+  text-shadow: 0 0 15px rgba(0, 243, 255, 0.5); /* Ombra del testo */
+}
+
+/* Stile del modulo di contatto */
+.contact-form {
+  background: var(--pulse-darker); /* Sfondo */
+  border-radius: 1rem; /* Bordi arrotondati */
+  padding: 2rem; /* Padding */
+  border: 1px solid rgba(0, 243, 255, 0.1); /* Bordo */
+  box-shadow: 0 4px 20px rgba(0, 243, 255, 0.05); /* Ombra */
+}
+
+/* Stile dei campi di input nel modulo di contatto */
+.form-control {
+  background: var(--pulse-dark); /* Sfondo */
+  border-radius: 0.5rem; /* Bordi arrotondati */
+  padding: 1rem; /* Padding */
+  margin-bottom: 1rem; /* Margine inferiore */
+  border: 1px solid rgba(0, 243, 255, 0.1); /* Bordo */
+  color: var(--pulse-light); /* Colore del testo */
+}
+
+/* Effetto focus per i campi di input nel modulo di contatto */
+.form-control:focus {
+  background: var(--pulse-dark); /* Sfondo */
+  border-color: var(--pulse-primary); /* Colore del bordo */
+  box-shadow: 0 0 0 0.2rem rgba(0, 243, 255, 0.25); /* Ombra */
+  color: var(--pulse-light); /* Colore del testo */
+}
+
+/* Stile del pulsante principale */
+.btn-primary {
+  background: linear-gradient(45deg, var(--pulse-primary), var(--pulse-secondary)); /* Gradiente lineare */
+  border: none; /* Nessun bordo */
+  transition: all 0.3s; /* Transizione per tutti gli stili */
+}
+
+/* Effetto hover per il pulsante principale */
+.btn-primary:hover {
+  transform: translateY(-2px); /* Spostamento verso l'alto */
+  box-shadow: 0 4px 20px rgba(0, 243, 255, 0.3); /* Ombra più pronunciata */
+}
+
+/* Stile del pulsante con bordo */
+.btn-outline-primary {
+  border-color: var(--pulse-primary); /* Colore del bordo */
+  color: var(--pulse-primary); /* Colore del testo */
+}
+
+/* Effetto hover per il pulsante con bordo */
+.btn-outline-primary:hover {
+  background: var(--pulse-primary); /* Sfondo */
+  color: var(--pulse-dark); /* Colore del testo */
+}
+
+/* Stile del pulsante nel modulo di contatto */
+.btn-contact {
+  width: 100%; /* Larghezza completa */
+  padding: 1rem; /* Padding */
+  border-radius: 0.5rem; /* Bordi arrotondati */
+  font-weight: 600; /* Peso del font */
+}
+
+/* Stile del contenitore del robot */
+.robot-container {
+  position: relative; /* Posizionamento relativo */
+  width: 200px; /* Larghezza */
+  height: 200px; /* Altezza */
+}
+
+/* Stile del volto del robot */
+.robot-face {
+  position: relative; /* Posizionamento relativo */
+  width: 100%; /* Larghezza completa */
+  height: 100%; /* Altezza completa */
+  display: flex; /* Display flessibile */
+  justify-content: center; /* Allineamento centrale orizzontale */
+  align-items: center; /* Allineamento centrale verticale */
+}
+
+/* Stile della testa del robot */
+.robot-head {
+  font-size: 8rem; /* Dimensione del font */
+  color: var(--pulse-primary); /* Colore del testo */
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.5); /* Ombra del testo */
+  animation: float 4s ease-in-out infinite; /* Animazione di fluttuazione */
+}
+
+/* Animazione di fluttuazione */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Animazione di lucentezza */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 230px var(--pulse-primary); }
+  50% { box-shadow: 0 0 40px var(--pulse-primary), 0 0 50px var(--pulse-secondary); }
+}
+
+/* Stili responsivi per schermi con larghezza massima di 768px */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem; /* Dimensione del font ridotta */
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem; /* Dimensione del font ridotta */
+  }
+
+  .navbar {
+     
+      background: rgba(86, 42, 189, 0.227); /* Sfondo semi-trasparente */
+      backdrop-filter: blur(10px); /* Sfocatura dello sfondo */
+      -webkit-backdrop-filter: blur(10px); /* Sfocatura dello sfondo per WebKit */
+      box-shadow: 0 4px 30px rgba(0, 243, 255, 0.15); /* Ombra */
+      border: 1px solid rgba(0, 243, 255, 0.1); /* Bordo */
+      border-radius: 0 0 1rem 1rem; /* Bordi arrotondati */
+      margin: 0 1rem; /* Margine */
+      width: calc(100% - 2rem); /* Larghezza calcolata */
+      transition: transform 0.3s, box-shadow 0.3s; /* Transizione per trasformazione e ombra */
+      z-index: 1000; /* Livello di profondità */
+  }
+
+  .about-card {
+    margin-bottom: 1rem; /* Margine inferiore */
+  }
+
+}

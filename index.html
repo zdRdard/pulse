@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Dichiarazione del tipo di documento e della lingua, inserimento nome scheda e icona-->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../public/robot-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse - A Glimpse of Future</title>
+
+    <!-- Collegamento a librerie esterne (bootstrap, aos, particles)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+          <i class="bi bi-robot me-2"></i>
+          <span>PULSE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home" data-section="home">
+                <i class="bi bi-house-door"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features" data-section="features">
+                <i class="bi bi-stars"></i> Features
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#specs" data-section="specs">
+                <i class="bi bi-cpu"></i> Specs
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about" data-section="about">
+                <i class="bi bi-info-circle"></i> About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact" data-section="contact">
+                <i class="bi bi-envelope"></i> Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="scroll-container">
+      <!-- Sezione Home -->
+      <section id="home" class="scroll-section active" data-section="home">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 hero-content" data-aos="fade-right">
+              <h1 class="hero-title">
+                Meet <span class="text-gradient">Pulse</span>
+              </h1>
+              <h2 class="hero-subtitle">A Glimpse of Future</h2>
+              <p class="mb-4">The next generation humanoid robot designed to revolutionize how we interact with technology. Combining cutting-edge AI with human-like movements.</p>
+              <div class="d-flex gap-3">
+                <a href="#features" class="btn btn-primary hero-btn" data-section="features">
+                  Discover Features
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline-primary hero-btn" data-section="contact">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center" data-aos="fade-left" data-aos-delay="200">
+              <div class="robot-container">
+                <div class="robot-face">
+                  <i class="bi bi-robot robot-head"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sezione Features -->
+      <section id="features" class="scroll-section active" data-section="features">
+        <div class="container">
+          <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+              <h2 data-aos="fade-up">Revolutionary <span class="text-gradient">Features</span></h2>
+              <p class="lead" data-aos="fade-up" data-aos-delay="200">Pulse combines cutting-edge technology with elegant design to create a humanoid robot that seamlessly integrates into your daily life.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up">
+              <div class="feature-card text-center">
+                <i class="bi bi-braces feature-icon"></i>
+                <h3>Advanced AI</h3>
+                <p>Pulse features state-of-the-art artificial intelligence capable of learning and adapting to various environments and tasks.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="feature-card text-center">
+                <i class="bi bi-chat-square-dots feature-icon"></i>
+                <h3>Natural Interaction</h3>
+                <p>Communicate naturally with Pulse through voice commands, gestures, and facial expressions.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="feature-card text-center">
+                <i class="bi bi-battery-charging feature-icon"></i>
+                <h3>Long Battery Life</h3>
+                <p>With our proprietary power management system, Pulse operates continuously for up to 18 hours.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="600">
+              <div class="feature-card text-center">
+                <i class="bi bi-shield-check feature-icon"></i>
+                <h3>Enhanced Security</h3>
+                <p>Built-in advanced security protocols ensure your data and interactions remain private and protected.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sezione Specs -->
+      <section id="specs" class="scroll-section" data-section="specs">
+        <div class="container">
+          <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+              <h2 data-aos="fade-up">Technical <span class="text-gradient">Specifications</span></h2>
+              <p class="lead" data-aos="fade-up" data-aos-delay="200">Powered by cutting-edge technology, Pulse sets a new standard for humanoid robots.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up">
+              <div class="specs-card">
+                <i class="bi bi-cpu specs-icon"></i>
+                <h3>Processor</h3>
+                <p class="specs-value">Quantum Core i9</p>
+                <p>Next-generation processing unit with dedicated AI acceleration</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="specs-card">
+                <i class="bi bi-battery-full specs-icon"></i>
+                <h3>Battery Life</h3>
+                <p class="specs-value">18 Hours</p>
+                <p>Continuous operation on a single charge with quick recharging</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="specs-card">
+                <i class="bi bi-eye specs-icon"></i>
+                <h3>Vision</h3>
+                <p class="specs-value">8K Ultra HD</p>
+                <p>Advanced optical sensors with depth perception and night vision</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="600">
+              <div class="specs-card">
+                <i class="bi bi-ear specs-icon"></i>
+                <h3>Audio</h3>
+                <p class="specs-value">360° Spatial</p>
+                <p>Omnidirectional microphones with noise cancellation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sezione About -->
+      <section id="about" class="scroll-section active" data-section="about">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+              <h2>About <span class="text-gradient">The Project</span></h2>
+              <div class="about-content">
+                <p>The Pulse project began in 2025 with a simple yet ambitious goal: to create a humanoid robot that could truly understand and adapt to human needs and environments.</p>
+                <p>Our team of engineers, designers, and AI specialists has worked tirelessly to develop a robot that doesn't just perform tasks, but learns, adapts, and anticipates needs in a natural, human-like way.</p>
+                <p>What sets Pulse apart is our commitment to creating technology that enhances human life without replacing human connection.</p>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="about-card text-center">
+                    <i class="bi bi-lightbulb about-icon"></i>
+                    <h3>Vision</h3>
+                    <p>Creating technology that understands and enhances human potential through adaptive AI and seamless integration.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="about-card text-center">
+                    <i class="bi bi-trophy about-icon"></i>
+                    <h3>Mission</h3>
+                    <p>Revolutionizing human-robot interaction through innovative technology and ethical AI development.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="about-card text-center">
+                    <i class="bi bi-graph-up about-icon"></i>
+                    <h3>Growth</h3>
+                    <p>Continuous learning and adaptation to meet evolving human needs and technological advances.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="about-card text-center">
+                    <i class="bi bi-heart about-icon"></i>
+                    <h3>Values</h3>
+                    <p>Commitment to ethical AI development and enhancing human life through responsible innovation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sezione Contact -->
+      <section id="contact" class="scroll-section" data-section="contact">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5" data-aos="fade-right">
+              <h2>Get In <span class="text-gradient">Touch</span></h2>
+              <p class="lead mb-4">Interested in learning more about Pulse? Have questions about our technology?</p>
+              <div class="d-flex align-items-center mb-4">
+                <i class="bi bi-geo-alt text-primary fs-4 me-3"></i>
+                <div>
+                  <h5 class="mb-0">Visit Us</h5>
+                  <p class="mb-0">Legnago (VR) 37045</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center mb-4">
+                <i class="bi bi-envelope text-primary fs-4 me-3"></i>
+                <div>
+                  <h5 class="mb-0">Email Us</h5>
+                  <p class="mb-0">info@pulsebot.it</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+              <div class="contact-form">
+                <h3 class="mb-4">Send Us a Message</h3>
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <input type="text" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <input type="email" class="form-control" placeholder="Your Email">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-contact">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Script per il funzionamento delle librerie esterne -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
